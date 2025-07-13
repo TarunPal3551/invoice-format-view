@@ -1,0 +1,79 @@
+.amount-info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.amount-terms-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 50%;
+    margin-left: 0;
+}
+
+.amount-container{
+    height: 100px;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+    align-self: flex-start;
+    width: 320px;
+    margin-bottom: 26px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.terms-conditions-container{
+    height: 100px;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+    display: flex;
+    justify-content: flex-start;
+    width: 320px;
+}
+
+.sub-total-signature-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 50%;
+    margin-right: 0;
+
+}
+
+.sub-total-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 3px solid #000;
+    border-left: 3px solid #000;
+    border-bottom: 3px solid #000;
+    margin-right: 0px;
+    width: 380px;
+    height: 180px;
+}
+
+.sign-container{
+    height: 98px;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    border-top: 3px solid #000;
+    border-left: 3px solid #000000;
+    width: 380px;
+    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.sub-total-container h3{
+    background-color: #449f26;
+    width: 100%;
+    color: #fff;
+    text-align: left;
+}

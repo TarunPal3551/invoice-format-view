@@ -1,0 +1,18 @@
+.preview-container{
+    text-align: center;
+    padding: 20px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.invoice-box{
+    margin: 0px;
+    border: solid 3px #000;
+    width: 770px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
