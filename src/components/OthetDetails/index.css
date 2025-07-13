@@ -70,6 +70,11 @@
     justify-content: flex-end;
     align-items: flex-start;
 }
+.sign-container p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
 
 .sub-total-container h3{
     background-color: #449f26;
