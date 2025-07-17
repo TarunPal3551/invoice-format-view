@@ -1,117 +1,116 @@
 .preview-container{
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    min-height: 700px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 30px;
-    margin: 20px;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin: 20px;
 }
 
 .invoice-box{
-    border: solid 2px #000;
-    width: 100%;
-    max-width: 770px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
+  border: solid 2px #000;
+  width: 100%;
+  max-width: 770px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
 }
 
 .logo-container{
-  max-width: 770px;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  padding-bottom: 0px;
+max-width: 770px;
+display: flex;
+justify-content: flex-end;
+width: 100%;
+padding-bottom: 0px;
 }
 
 .logo{
-  height: 100px;
-  width: 100px;
-  align-self: flex-end;
-  margin-bottom: 0;
+height: 100px;
+width: 100px;
+align-self: flex-end;
+margin-bottom: 0;
 }
 
 /* Responsive design for invoice preview */
 
 @media screen and (max-width: 890px) {
-  .preview-container {
-    padding: 10px;
-    margin: 0px;
-    height: auto;
+.preview-container {
+  padding: 10px;
+  margin: 0px;
+  height: auto;
 
-  }
-  .invoice-box {
-    max-width: 100%;
-  }
+}
+.invoice-box {
+  max-width: 100%;
+}
 
-  .logo-container{
-    max-width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-bottom: 0px;
-    margin: 0;
-  }
+.logo-container{
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 0px;
+  margin: 0;
+}
 
-  .logo{
-    height: 70px;
-    width: 70px;
-    align-self: flex-end;
-    margin-bottom: 0;
-  }
+.logo{
+  height: 70px;
+  width: 70px;
+  align-self: flex-end;
+  margin-bottom: 0;
+}
 }
 
 @media screen and (max-width: 600px) {
 
-  body{
-    padding: 0;
-  }
-  .preview-container {
-    padding: 0;
-    margin: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-    height: auto;
-  }
-  .invoice-box {
-    max-width: 100%;
-    border-width: 1px;
-    margin-right: 4px;
-  }
+body{
+  padding: 0;
+}
+.preview-container {
+  padding: 0;
+  margin: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  height: auto;
+}
+.invoice-box {
+  max-width: 100%;
+  border-width: 1px;
+  margin-right: 4px;
+}
 }
 
 @media print {
-    body {
-      margin: 0;
-      padding: 0;
-    }
-  
-    .preview-container {
-      margin: 0 !important;
-      padding: 0 !important;
-      height: auto !important;
-      width: 210mm;
-      min-height: 297mm;
-      box-shadow: none;
-      overflow: hidden;
-    }
-  
-    .invoice-box {
-      max-width: 100%;
-      box-shadow: none;
-      padding: 0;
-    }
-  
-    .invoice-table-container {
-      overflow-x: visible;
-    }
-  
-    /* Optional: Hide buttons, header, etc. */
-    .no-print {
-      display: none;
-    }
+  body {
+    margin: 0;
+    padding: 0;
   }
-  
+
+  .preview-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .invoice-box {
+    max-width: 100%;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .invoice-table-container {
+    overflow-x: visible;
+  }
+
+  /* Optional: Hide buttons, header, etc. */
+  .no-print {
+    display: none;
+  }
+}

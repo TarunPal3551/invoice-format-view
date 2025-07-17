@@ -1,338 +1,338 @@
 .amount-info-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0;
 }
 
 .amount-info-container p{
-  font-size: 12px;
+font-size: 12px;
+font-weight: bold;
+color: #000;
+}
+
+.amount-info-container span{
+font-size: 12px;
+width: 90%;
+color: #181717;
+margin-left: 5px;
+font-weight: 500;
+margin-right: 10px;
+}
+
+.amount-terms-container{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 60%;
+  margin-left: 0;
+}
+
+.amount-container{
+  min-height: 60px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  align-self: flex-start;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  margin-top: 26px;
+  max-width: 420px;
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.terms-conditions-container{
+  min-height: 60px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+  max-width: 420px;
+  padding: 10px;
+}
+
+.sub-total-signature-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 40%;
+  height: 100%;
+}
+
+.sub-total-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  margin-right: 0px;
+  width: 100%;
+  max-width: 380px;
+  min-height: 150px;
+}
+
+.sub-total-container p{
+  margin-left: 10px;
+}
+
+.payment-option-container{
+  min-height: 60px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  align-self: flex-start;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 26px;
+  display: flex;
+  margin-top: 26px;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.alin-container{
+display: flex;
+justify-content: space-between;
+width: 100%;
+align-items: center;
+padding-right: 10px;
+}
+
+.sign-container{
+  min-height: 110px;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000000;
+  width: 100%;
+  max-width: 380px;
+  align-self: flex-end;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 10px;
+}
+.sign-container p{
+  font-size: 16px;
   font-weight: bold;
   color: #000;
 }
 
-.amount-info-container span{
-  font-size: 12px;
-  width: 90%;
-  color: #181717;
-  margin-left: 5px;
-  font-weight: 500;
-  margin-right: 10px;
-}
-
-.amount-terms-container{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    width: 60%;
-    margin-left: 0;
-}
-
-.amount-container{
-    min-height: 60px;
-    border-top: 2px solid #000;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
-    align-self: flex-start;
-    flex-direction: column;
-    text-align: left;
-    width: 100%;
-    margin-top: 26px;
-    max-width: 420px;
-    margin-bottom: 26px;
-    display: flex;
-    justify-content: flex-start;
-    padding: 10px;
-}
-
-.terms-conditions-container{
-    min-height: 60px;
-    border-top: 2px solid #000;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    display: flex;
-    justify-content: flex-start;
-    text-align: left;
-    width: 100%;
-    max-width: 420px;
-    padding: 10px;
-}
-
-.sub-total-signature-container{
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 40%;
-    height: 100%;
-}
-
-.sub-total-container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-top: 2px solid #000;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
-    margin-right: 0px;
-    width: 100%;
-    max-width: 380px;
-    min-height: 150px;
-}
-
-.sub-total-container p{
-    margin-left: 10px;
-}
-
-.payment-option-container{
-    min-height: 60px;
-    border-top: 2px solid #000;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    align-self: flex-start;
-    flex-direction: column;
-    text-align: left;
-    width: 100%;
-    max-width: 420px;
-    margin-bottom: 26px;
-    display: flex;
-    margin-top: 26px;
-    justify-content: flex-start;
-    padding: 10px;
-}
-
-.alin-container{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  padding-right: 10px;
-}
-
-.sign-container{
-    min-height: 110px;
-    display: flex;
-    margin-top: 10px;
-    flex-direction: column;
-    border-top: 2px solid #000;
-    border-left: 2px solid #000000;
-    width: 100%;
-    max-width: 380px;
-    align-self: flex-end;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 10px;
-}
-.sign-container p{
-    font-size: 16px;
-    font-weight: bold;
-    color: #000;
-}
-
 .sub-total-container h5{
-    background-color: #8fdf74;
-    width: 100%;
-    color: #000;
-    text-align: left;
-    padding: 8px;
-    margin: 0;
+  background-color: #8fdf74;
+  width: 100%;
+  color: #000;
+  text-align: left;
+  padding: 8px;
+  margin: 0;
 }
 
 .qr-code-image{
-  height: 100px;
-  width: 100px;
+height: 100px;
+width: 100px;
 }
 
 .qr-container {
-  border: solid 1px #000;
-  padding: 6px;
-  text-align: left;
-  flex: 1 1 40%; /* Flex shrink/grow, min width 40% */
-  min-width: 140px;
+border: solid 1px #000;
+padding: 6px;
+text-align: left;
+flex: 1 1 40%; /* Flex shrink/grow, min width 40% */
+min-width: 140px;
 }
 
 .bank-details-container {
-  border: solid 1px #000;
-  padding: 6px;
-  text-align: left;
-  flex: 1 1 55%; /* Flex shrink/grow, min width 55% */
-  min-width: 180px;
-  display: flex;
-  flex-direction: column;
+border: solid 1px #000;
+padding: 6px;
+text-align: left;
+flex: 1 1 55%; /* Flex shrink/grow, min width 55% */
+min-width: 180px;
+display: flex;
+flex-direction: column;
 }
 
 
 .payment-method-container {
-  display: flex;
-  flex-wrap: wrap; /* Allows QR and Bank Details to wrap on smaller screens */
-  gap: 10px;
-  margin-top: 20px;
-  justify-content: space-between;
+display: flex;
+flex-wrap: wrap; /* Allows QR and Bank Details to wrap on smaller screens */
+gap: 10px;
+margin-top: 20px;
+justify-content: space-between;
 }
 
 /* Responsive design for other details */
 
 @media screen and (max-width: 890px) {
-  .amount-info-container {
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-  }
-  .amount-terms-container{
-    width: 45%;
-    margin: 0;
-    padding: 0;
-  }
+.amount-info-container {
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+.amount-terms-container{
+  width: 45%;
+  margin: 0;
+  padding: 0;
+}
 
-  .sub-total-signature-container {
-    width: 45%;
-    margin: 0;
-    min-height: 324px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
+.sub-total-signature-container {
+  width: 45%;
+  margin: 0;
+  min-height: 324px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
-  .amount-container,
-  .terms-conditions-container,
-  .payment-option-container,
-  .sub-total-container,
-  .sign-container {
-    max-width: 100%;
-    min-width: 0;
-    font-size: 13px;
-  }
-  .sign-container{
-    border-top: 1px solid #000;
-    border-left: 1px solid #000000;
-    min-height: 100px;
-    height: 127px;
-  }
+.amount-container,
+.terms-conditions-container,
+.payment-option-container,
+.sub-total-container,
+.sign-container {
+  max-width: 100%;
+  min-width: 0;
+  font-size: 13px;
+}
+.sign-container{
+  border-top: 1px solid #000;
+  border-left: 1px solid #000000;
+  min-height: 100px;
+  height: 127px;
+}
 
-  .sub-total-container{
-    border-top: 1px solid #000;
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-    min-height: 100px;
-    padding-bottom: 10px;
-  }
-  .sign-container p {
-    font-size: 16px;
-  }
-  .sub-total-container span{
-    font-size: 10px;
-    margin-right: 0;
-    margin-left: 0;
-  }
-  .sub-total-container h5 {
-    font-size: 10px;
-    padding: 6px;
-  }
-  .sub-total-container p{
-    font-size: 9px;
-    margin-left: 6px;
-  }
-  .amount-container{
-    border-left: solid 1px #000;
-    border-right: none;
-  }
+.sub-total-container{
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  min-height: 100px;
+  padding-bottom: 10px;
+}
+.sign-container p {
+  font-size: 16px;
+}
+.sub-total-container span{
+  font-size: 10px;
+  margin-right: 0;
+  margin-left: 0;
+}
+.sub-total-container h5 {
+  font-size: 10px;
+  padding: 6px;
+}
+.sub-total-container p{
+  font-size: 9px;
+  margin-left: 6px;
+}
+.amount-container{
+  border-left: solid 1px #000;
+  border-right: none;
+}
 
-  .payment-option-container,
-  .amount-container,
-  .terms-conditions-container {
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-  }
+.payment-option-container,
+.amount-container,
+.terms-conditions-container {
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
 
-  .terms-conditions-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .qr-code-image{
-    min-height: 40px;
-    min-width: 40px;
-  }
-  
-  .qr-container{
-    border: solid 1px #000;
-    padding: 6px;
-    text-align: left;
-    margin-right: 10px;
-    width: 40%;
-  }
-  .bank-details-container{
-    border: solid 1px #000;
-    text-align: left;
-    padding: 4px;
-    width: 55%;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-  .bank-details-container p{
-    font-size: 12px;
-    font-weight: 500;
-  }
-  
-  .payment-method-container{
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-between;
-  }
+.terms-conditions-container {
+  display: flex;
+  flex-direction: column;
+}
+.qr-code-image{
+  min-height: 40px;
+  min-width: 40px;
+}
+
+.qr-container{
+  border: solid 1px #000;
+  padding: 6px;
+  text-align: left;
+  margin-right: 10px;
+  width: 40%;
+}
+.bank-details-container{
+  border: solid 1px #000;
+  text-align: left;
+  padding: 4px;
+  width: 55%;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.bank-details-container p{
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.payment-method-container{
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
 
 }
 
 @media screen and (max-width: 600px) {
-  .amount-info-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.amount-info-container {
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  .amount-terms-container,
-  .sub-total-signature-container,
-  .qr-container,
-  .bank-details-container {
-    width: 100% !important;
-    max-width: 100%;
-    min-width: 0;
-  }
+.amount-terms-container,
+.sub-total-signature-container,
+.qr-container,
+.bank-details-container {
+  width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+}
 
-  .payment-method-container {
-    flex-direction: column;
-    gap: 8px;
-  }
+.payment-method-container {
+  flex-direction: column;
+  gap: 8px;
+}
 
-  .amount-info-container p,
-  .amount-info-container span,
-  .terms-conditions-container p,
-  .bank-details-container p,
-  .customer-info-container p,
-  .company-info-container p {
-    word-break: break-word;
-    white-space: normal;
-  }
+.amount-info-container p,
+.amount-info-container span,
+.terms-conditions-container p,
+.bank-details-container p,
+.customer-info-container p,
+.company-info-container p {
+  word-break: break-word;
+  white-space: normal;
+}
 }
 
 @media print{
-  .amount-info-container{
-    padding: 0;
-  }
+.amount-info-container{
+  padding: 0;
+}
 
-  .payment-option-container{
-    height: 260px;
-  }
+.payment-option-container{
+  height: 260px;
+}
 
-  .sub-total{
-    font-size: 14px;
-    font-weight: bold;
-    color: #000;
-  }
+.sub-total{
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
 
-  .sign-container{
-    height: 127px;
-  }
+.sign-container{
+  height: 127px;
+}
 }

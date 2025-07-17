@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import './index.css'
-import InvoiceTable from '../InvoiceTable'
-import CompanyInfo from '../CompanyInfo'
-import CostumerInfo from '../CostumerInfo'
-import OtherDetails from '../OthetDetails'
+import React, { useEffect, useState } from 'react';
+import './index.css';
+import InvoiceTable from '../InvoiceTable';
+import CompanyInfo from '../CompanyInfo';
+import CostumerInfo from '../CostumerInfo';
+import OtherDetails from '../OthetDetails';
 import numberToWords from 'number-to-words';
 
 const API_URL = 'https://app.apnabillbook.com/api/order/getOrderByInvoiceId/sV1lZF9773';
@@ -11,12 +11,10 @@ const API_URL = 'https://app.apnabillbook.com/api/order/getOrderByInvoiceId/sV1l
 const convertToWords = (amount) => {
   const rounded = Math.round(amount);
   const words = numberToWords.toWords(rounded);
-  // Capitalize first letter of each word
   const capitalized = words
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
-
   return `Rupees ${capitalized} Only`;
 };
 
@@ -33,7 +31,6 @@ const InvoicePreview = () => {
         if (!response.ok) throw new Error('Network response was not ok');
         const result = await response.json();
         setInvoiceData(result.data);
-        console.log('Fetched invoice data:', result.data); // Log the fetched data
       } catch (err) {
         setError(err.message);
       } finally {
@@ -47,33 +44,28 @@ const InvoicePreview = () => {
   if (error) return <div>Error: {error}</div>;
   if (!invoiceData) return <div>No invoice data found.</div>;
 
-  // Prepare items for InvoiceTable
   const invoiceItems = invoiceData.orderProducts.map(item => ({
     name: item.productName,
     quantity: item.quantity,
     pricePerUnit: item.price,
     description: item.description || '',
     unit: item.unitName || '',
-    unitName: item.unitName || '',
     hsn: item.hsn || '',
     taxRate: item.taxRate || '',
     discount: item.discount || '',
   }));
 
-  // Dynamic Price/Unit header
-  const allUnitNames = invoiceData.orderProducts.map(item => item.unitName).filter(Boolean);
-  const uniqueUnitNames = [...new Set(allUnitNames)];
-  const priceHeader = uniqueUnitNames.length === 1 && uniqueUnitNames[0]
+  const uniqueUnitNames = [...new Set(
+    invoiceData.orderProducts.map(item => item.unitName).filter(Boolean)
+  )];
+  const priceHeader = uniqueUnitNames.length === 1
     ? `Price/${uniqueUnitNames[0]}`
     : 'Price/Unit';
 
-  // Totals
-  const subTotal = invoiceData.itemTotal;
-  const gstAmount = invoiceData.tax;
-  // If tax is split into SGST/CGST, you can adjust here. For now, use 0.5 split if tax exists.
-  const sgst = gstAmount / 2;
-  const cgst = gstAmount / 2;
-  const grandTotal = invoiceData.grandTotal;
+  const isShowShippingAddress = invoiceData.shippingAddressId && invoiceData.shippingAddressId !== "";
+  const isWalkinCustomer = invoiceData.walkin_customer && invoiceData.walkin_customer.id !== null;
+  const invoiceNumber = invoiceData.billNo
+  const date = invoiceData.updatedAt
 
   return (
     <div className='preview-container'>
@@ -81,16 +73,22 @@ const InvoicePreview = () => {
         <img src="/logo.png" alt="Company Logo" className='logo' />
       </div>
       <div className='invoice-box'>
-          <CompanyInfo company={invoiceData.store} />
-          <CostumerInfo customer={invoiceData.walkin_customer} />
-          <InvoiceTable items={invoiceItems} priceHeader={priceHeader} />
-          <OtherDetails invoice={invoiceData} />
+        <CompanyInfo company={invoiceData.store} />
+        
+        {/* Render Customer Info if any of the info is present */}
+        <CostumerInfo
+          walkinCustomer={invoiceData.walkin_customer}
+          shippingAddress={invoiceData.shippingAddress}
+          shippingAddressId={invoiceData.shippingAddressId}
+          date={date}
+          invoiceNumber={invoiceNumber}
+        />
 
-
+        <InvoiceTable items={invoiceItems} priceHeader={priceHeader} />
+        <OtherDetails invoice={invoiceData} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default InvoicePreview
-
+export default InvoicePreview;

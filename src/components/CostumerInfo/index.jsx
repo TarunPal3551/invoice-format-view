@@ -1,56 +1,71 @@
-import './index.css'
+import './index.css';
 
+const CostumerInfo = ({ shippingAddressId, shippingAddress, walkinCustomer, date, invoiceNumber }) => {
+  const isShowShippingAddress =
+    shippingAddressId !== null &&
+    shippingAddressId !== "" &&
+    shippingAddress !== null &&
+    typeof shippingAddress === "object";
 
-const initialCustomerInfo = {
-    name: "Arakoo Technologies Pvt. Ltd.",
-    address: "Plot No. 99, Near Cyber Towers, Madhapur,\nHyderabad, Telangana - 500081",
-    phone: "+91-9876543210",
-    gstin: "36ARAKO9999Z1Z1",
-    state: "Telangana",
-    invoiceNo: "INV-2025-0042",
-    date: "2025-07-13",
+  const isShowWalkinCustomer =
+    walkinCustomer !== null &&
+    typeof walkinCustomer === "object" &&
+    walkinCustomer.name;
+
+  const renderShippingAddress = () => (
+    <div className='shipping-container'>
+      <div>
+        <h3>Shipping To:</h3>
+        {shippingAddress.costumer_name !== null && <p><strong>Name: </strong><span>{shippingAddress.customer_name}</span></p>}
+        {shippingAddress.address_2 !== null && <p><strong>Address: </strong><span>{shippingAddress.address_2}</span></p>}
+        {shippingAddress.phone !== null && <p><strong>Contact No.: </strong><span>{shippingAddress.phone}</span></p>}
+        {shippingAddress.email !== null && <p><strong>Google Address: </strong><span>{shippingAddress.address}</span></p>}
+        {shippingAddress.address && <p><strong>Google Address: </strong><span>{shippingAddress.address}</span></p>}
+      </div>
+    </div>
+  );
+
+  const renderWalkinCustomerAddress = () => (
+    <div className='shipping-container'>
+      <div>
+        <h3>Billing To:</h3>
+        {walkinCustomer.name !== null && <p><strong>Name: </strong><span>{walkinCustomer.name}</span></p>}
+        {walkinCustomer.addressLine1 !== null && 
+            <p><strong>Address: </strong><span>{walkinCustomer.addressLine1} {walkinCustomer.addressLine2}</span></p>
+        }
+        
+        {walkinCustomer.mobile !== null &&
+            <p><strong>Contact No.: </strong><span>{walkinCustomer.mobile}</span></p>
+        }
+      </div>
+    </div>
+  );
+
+  return (
+    <div className='invoice-info-container'>
+      <div className='invoice-info-heading-container'>
+        <hr style={{ width: "100%", border: "10px solid #88ad6d" }} />
+        <h1>Tax Invoice</h1>
   
-    shippingTo: {
-      companyName: "Arakoo Tech Park - Warehouse Unit 2",
-      address: "D-102, Hardware Industrial Estate,\nKukatpally, Hyderabad - 500072, Telangana"
-    }
+        {/* ✅ Always render invoice number and date */}
+        <div className='invoice-number-date-container'>
+          <p><strong>Invoice No.:</strong> <span>{invoiceNumber}</span></p>
+          <p><strong>Date:</strong> <span>{date}</span></p>
+        </div>
+  
+        {/* ✅ Conditionally render customer/shipping address */}
+        {(isShowWalkinCustomer || isShowShippingAddress) ? (
+          <div className='invoice-info'>
+            {isShowWalkinCustomer && renderWalkinCustomerAddress()}
+            {isShowShippingAddress && renderShippingAddress()}
+          </div>
+        ) : (
+          <p></p>
+        )}
+      </div>
+    </div>
+  );
+  
 };
 
-const CostumerInfo = () => {
-    return(
-        <div className='invoice-info-container'>
-            
-                <div className='invoice-info-heading-container'>
-                <hr style={{width: "100%", border: "10px solid #88ad6d"}} />
-                    <h1>Tax Invoice</h1>
-                        <div className='invoice-info'>
-                            <div className='billing-container'>
-                                <h3>Bill To:</h3>
-                                <p><strong>Name:<span>{initialCustomerInfo.name}</span></strong></p>
-                                <p><strong>Address:<span>{initialCustomerInfo.address}</span></strong></p>
-                                <p><strong>Contact No.:<span>{initialCustomerInfo.phone}</span></strong></p>
-                                <p><strong>GSTIN No.:<span>{initialCustomerInfo.gstin}</span></strong></p>
-                                <p><strong>State:<span>{initialCustomerInfo.state}</span></strong></p>
-                            </div>
-                            <div className='shipping-container'>
-                                <div>
-                                    <h3>Shipping To:</h3>
-                                    <p><strong>Name:<span>{initialCustomerInfo.shippingTo.companyName}</span></strong></p>
-                                    <p><strong>Address:<span>{initialCustomerInfo.shippingTo.address}</span></strong></p>
-                                </div>
-                                <div className='shipping-date-container'>
-                                    <p><strong>Invoice No.:<span>{initialCustomerInfo.invoiceNo}</span></strong></p>
-                                    <p><strong>Date:<span>{initialCustomerInfo.date}</span></strong></p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-
-            </div>
-    )
-}
-
-export default CostumerInfo
-
+export default CostumerInfo;

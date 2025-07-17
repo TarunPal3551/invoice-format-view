@@ -1,133 +1,155 @@
 .invoice-info-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    align-items: center;
-    width: 100%;
-    min-height: 140px;
-    background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  min-height: 140px;
+  background-color: #fff;
 }
 .invoice-info-heading-container{
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 .invoice-info-container h1{
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    background-color: #dcf8c8;
-    width: 100%;
-    padding: 10px 0;
-    margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  background-color: #dcf8c8;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
 }
 
 .invoice-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.invoice-number-date-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  justify-content: flex-start;
 }
 
 .billing-container{
-    width: 36%;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
-    margin-top: 16px;
+  width: 36%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  margin-top: 16px;
 }
 
 .shipping-container{
-    width: 50%;
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-right: 10px;
-    text-align: left;
-    margin-bottom: 14px;
+  width: 50%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 10px;
+  text-align: left;
+  margin-bottom: 14px;
 }
 
 
 .shipping-date-container{
-    text-align: left;
+  text-align: left;
 }
 .invoice-info p{
-    font-size: 13px;
-    font-weight: 500;
-    color: #000;
-    margin: 2px 0;
-    margin-left: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000;
+  margin: 2px 0;
+  margin-left: 10px;
+}
+.invoice-number-date-container p{
+  font-size: 13px;
+  font-weight: 500;
+  color: #000;
+  margin: 2px 0;
+  margin-left: 10px;
+}
+
+.invoice-number-date-container span{
+  font-size: 12px;
+  color: #181717;
+  margin-left: 10px;
+  font-weight: 500;
 }
 
 .invoice-info span{
-    font-size: 12px;
-    color: #181717;
-    margin-left: 10px;
-    font-weight: 500;
+  font-size: 12px;
+  color: #181717;
+  margin-left: 10px;
+  font-weight: 500;
 }
 
 .invoice-info h3{
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 /* Responsive design for customer info */
 
 @media screen and (max-width: 890px){
-  .invoice-info {
-    gap: 0;
-    align-items: stretch;
-    height: 160px;
-  }
-  .billing-container,
-  .shipping-container {
-    width: 100%;
-    min-height: unset;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding-right: 0;
-  }
-  .invoice-info-container h1 {
-    font-size: 18px;
-    padding: 8px 0;
-  }
-  .invoice-info p,
-  .invoice-info span {
-    font-size: 12px;
-    margin-left: 6px;
-  }
-  .invoice-info h3 {
-    margin-left: 6px;
-    font-size: 15px;
-  }
+.invoice-info {
+  gap: 0;
+  align-items: stretch;
+  height: 160px;
+}
+.billing-container,
+.shipping-container {
+  width: 100%;
+  min-height: unset;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-right: 0;
+}
+.invoice-info-container h1 {
+  font-size: 18px;
+  padding: 8px 0;
+}
+.invoice-info p,
+.invoice-info span {
+  font-size: 12px;
+  margin-left: 6px;
+}
+.invoice-info h3 {
+  margin-left: 6px;
+  font-size: 15px;
+}
 }
 
 @media screen and (max-width: 600px){
-  .invoice-info-container {
-    min-height: 300px;
-    height: 100%;
-  }
-  .invoice-info-container h1 {
-    font-size: 16px;
-    padding: 6px 0;
-  }
-  .invoice-info p,
-  .invoice-info span {
-    font-size: 11px;
-    margin-left: 4px;
-  }
-  .invoice-info h3 {
-    font-size: 13px;
-    margin-left: 4px;
-  }
+.invoice-info-container {
+  min-height: 300px;
+  height: 100%;
+}
+.invoice-info-container h1 {
+  font-size: 16px;
+  padding: 6px 0;
+}
+.invoice-info p,
+.invoice-info span {
+  font-size: 11px;
+  margin-left: 4px;
+}
+.invoice-info h3 {
+  font-size: 13px;
+  margin-left: 4px;
+}
 }
 
 @media print{
-  .invoice-info-container{
-    padding: 0;
-  }
+.invoice-info-container{
+  padding: 0;
+}
 }

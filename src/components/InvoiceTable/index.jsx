@@ -10,7 +10,6 @@ const InvoiceTable = ({ items = [], priceHeader = 'Price/Unit' }) => {
 
   // Calculate total
   const totalAmount = items.reduce((acc, item) => {
-    console.log(item)
     const price = item.pricePerUnit || item.price || 0;
     const quantity = item.quantity || 0;
     const gstRate = item.taxRate || 0;

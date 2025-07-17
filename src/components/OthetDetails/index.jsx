@@ -1,4 +1,4 @@
-import './index.css'
+import './index.css';
 import numberToWords from 'number-to-words';
 
 const convertToWords = (amount) => {
@@ -8,7 +8,6 @@ const convertToWords = (amount) => {
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
-
   return `Rupees ${capitalized} Only`;
 };
 
@@ -19,63 +18,78 @@ const OtherDetails = ({ invoice }) => {
   const cgst = gstAmount / 2;
   const total = invoice.grandTotal || 0;
   const amountInWords = convertToWords(total);
-
-  // Dynamic Table Charges and Previous Due
   const tableCharges = invoice.tableCharges || 0;
   const previousDue = invoice.previousDue || 0;
 
-  // Store Settings
+  // --- Store Settings ---
   const storeSetting = invoice?.store?.store_setting || {};
-  const showQr = storeSetting?.showInvoiceQr || false;
+  const showQr = storeSetting.showInvoiceQr;
   const showBankDetails = storeSetting?.showBankDetails || false;
-  const bankDetail = "storeSetting.bankDetails"
+  const bankDetail = storeSetting.bankDetails;
+  const termAndConditions = storeSetting.storeTermsAndCondition || '';
 
-  const alternateQrString = storeSetting?.alternateQrString || '';
-  const alternateQr = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(storeSetting.alternateQrString)}`;
+  let deliveryCharges = 0;
+  if (invoice.otherCharges) {
+    try {
+      const otherChargesArr = JSON.parse(invoice.otherCharges);
+      const deliveryObj = otherChargesArr.find(
+        (charge) => charge.name && charge.name.toLowerCase().includes('delivery')
+      );
+      if (deliveryObj && deliveryObj.amount) {
+        deliveryCharges = Number(deliveryObj.amount);
+      }
+    } catch (e) {
+      // If parsing fails, keep deliveryCharges as 0
+      console.error('Failed to parse otherCharges:', e);
+    }
+  }
 
-
-
-
-  const termAndConditions = "storeSetting.storeTermsAndCondition"
   return (
     <div className='amount-info-container'>
       <div className='amount-terms-container'>
 
-      {termAndConditions.trim() !== '' && (
-        <div className='terms-conditions-container'>
+        {termAndConditions.trim() !== '' && (
+          <div className='terms-conditions-container'>
             <p><strong>Terms & Conditions:</strong></p>
             <p><span>{termAndConditions}</span></p>
-        </div>
+          </div>
         )}
 
         <div className='payment-option-container'>
           <p><strong>Payment Option:</strong></p>
           <div className='payment-method-container'>
           {showQr && (
-            <div className='qr-container'>
-                {storeSetting.enableAlternateQrString ? (
-                <>
-                    <img
-                        src={alternateQr}
-                        alt="UPI QR Code"
+              (storeSetting.enableAlternateQrString && storeSetting.alternateQrString?.trim()) ? (
+                <div className='qr-container'>
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(storeSetting.alternateQrString)}`}
+                    alt="Alternate UPI QR Code"
+                    className="qr-code-image"
+                  />
+                  <p>Scan & Pay via UPI</p>
+                </div>
+              ) : (
+                storeSetting.paymentQrImage || storeSetting.paymentQrText ? (
+                  <div className='qr-container'>
+                    {storeSetting.paymentQrImage && (
+                      <img
+                        src={storeSetting.paymentQrImage}
+                        alt="Payment QR"
                         className="qr-code-image"
-                    />
-                    <p>Scan & Pay via UPI</p>
-                </>
-                ) : (
-                <>
-                    <img src={`https://app.apnabillbook.com/${storeSetting.paymentQrImage}`} alt='qr-code' className='qr-code-image' />
-                    <p>UPI ID: <span>{storeSetting.paymentQrText}</span></p>
-                </>
-                )}
-            </div>
+                      />
+                    )}
+                    {storeSetting.paymentQrText && <p>{storeSetting.paymentQrText}</p>}
+                  </div>
+                ) : null
+              )
             )}
 
-            {bankDetail?.trim() !== '' && (
-            <div className='bank-details-container'>
+
+            {bankDetail?.trim() && (
+              <div className='bank-details-container'>
                 <p><strong>Bank Details:</strong></p>
                 <p>{bankDetail}</p>
-            </div>
+              </div>
             )}
           </div>
         </div>
@@ -98,6 +112,10 @@ const OtherDetails = ({ invoice }) => {
           <div className='alin-container'>
             <p><strong>Table Charges:</strong></p>
             <p><span>₹{tableCharges.toFixed(2)}</span></p>
+          </div>
+          <div className='alin-container'>
+            <p><strong>Delivery Charges:</strong></p>
+            <p><span>₹{deliveryCharges.toFixed(2)}</span></p>
           </div>
           <div className='alin-container'>
             <p><strong>Previous Due:</strong></p>
