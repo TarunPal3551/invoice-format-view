@@ -92,9 +92,29 @@
   margin-left: 10px;
   font-weight: 500;
 }
-
+.invoice-info-heading-container hr{
+  border: solid 10px #88ad6d;
+  width: 100%;
+}
 .invoice-info h3{
   margin-left: 10px;
+}
+
+/* --- Blue Theme Overrides --- */
+.blue-theme .invoice-info-container h1 {
+  background-color: #c8f0f8;
+}
+.blue-theme .invoice-info-heading-container hr {
+  border: solid 10px #2e79d0;
+}
+
+/* ----- Black and White Theme --- */
+.black-and-white-theme .invoice-info-container h1 {
+  background-color: #dedbdb;
+}
+
+.black-and-white-theme .invoice-info-heading-container hr {
+  border: solid 10px #323232;
 }
 
 /* Responsive design for customer info */

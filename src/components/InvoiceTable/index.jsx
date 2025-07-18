@@ -20,7 +20,7 @@ const InvoiceTable = ({ items = [], priceHeader = 'Price/Unit' }) => {
 
   return (
     <div className="invoice-table-container">
-      <hr style={{ width: "100%", border: "10px solid #88ad6d" }} />
+      <hr />
       <table className="invoice-table">
         <thead>
           <tr>

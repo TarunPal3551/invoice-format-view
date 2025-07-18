@@ -336,3 +336,30 @@ justify-content: space-between;
   height: 127px;
 }
 }
+
+/* --- Blue Theme Overrides --- */
+.blue-theme .sub-total-container h5 {
+  background-color: #8fcbdf;
+}
+
+.blue-theme .align-container-bg-color {
+  background-color: #8fcbdf;
+}
+
+/* ---- Black and white theme --- */
+.black-and-white-theme .sub-total-container h5 {
+  background-color: #fff;
+}
+
+.black-and-white-theme .align-container-bg-color {
+  background-color: #fff;
+}
+
+.align-container-bg-color{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-right: 10px;
+  background-color: #8fdf74;
+}

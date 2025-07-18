@@ -66,6 +66,65 @@
   margin-left: 20px;
   margin-right: 10px;
 }
+.invoice-table-container hr{
+  border: solid 10px #88ad6d;
+  width: 100%;
+}
+
+/* --- Blue Theme Overrides --- */
+.blue-theme .invoice-table th {
+  background-color: #c8e1f8;
+}
+.blue-theme .invoice-table tbody tr.even-row {
+  background-color: #c8f0f8;
+}
+.blue-theme .invoice-table tbody tr:hover {
+  background-color: #e9e8f5;
+}
+.blue-theme .total-container {
+  background-color: #2e79d0;
+}
+
+.blue-theme .total-container h1{
+  color: #ffffff;
+}
+
+.blue-theme .total-container span{
+  color: #ffffff;
+}
+
+.blue-theme .invoice-table-container hr{
+  border: solid 10px #2e79d0;
+}
+
+/* ----- Black and White Theme --- */
+.black-and-white-theme .invoice-table th {
+  background-color: #959697;
+}
+
+.black-and-white-theme .invoice-table tbody tr.even-row {
+  background-color: #babcbc;
+}
+
+.black-and-white-theme .invoice-table tbody tr:hover {
+  background-color: #a9aaa9;
+}
+
+.black-and-white-theme .total-container {
+  background-color: #323232;
+}
+
+.black-and-white-theme .total-container h1{
+  color: #ffffff;
+}
+
+.black-and-white-theme .total-container span{
+  color: #ffffff;
+}
+
+.black-and-white-theme .invoice-table-container hr{
+  border: solid 10px #323232;
+}
 
 /* Responsive design for table */
 

@@ -97,7 +97,7 @@ const OtherDetails = ({ invoice }) => {
 
       <div className='sub-total-signature-container'>
         <div className='sub-total-container'>
-          <div className='alin-container' style={{ backgroundColor: "#8fdf74" }}>
+          <div className='align-container-bg-color'>
             <h5 className='sub-total'><strong>Sub Total:</strong></h5>
             <p>₹{subTotal.toFixed(2)}</p>
           </div>

@@ -44,7 +44,7 @@ const CostumerInfo = ({ shippingAddressId, shippingAddress, walkinCustomer, date
   return (
     <div className='invoice-info-container'>
       <div className='invoice-info-heading-container'>
-        <hr style={{ width: "100%", border: "10px solid #88ad6d" }} />
+      <hr />
         <h1>Tax Invoice</h1>
   
         {/* ✅ Always render invoice number and date */}

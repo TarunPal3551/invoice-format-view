@@ -20,6 +20,50 @@
   background-color: white;
 }
 
+:root {
+  --text-color: #000;
+  --bg-color: #fff;
+  --highlight-color: #f0f0f0;
+}
+
+.blue-theme {
+  --bg-color: #e6f0ff;
+  --text-color: #003366;
+  --highlight-color: rgba(0, 102, 204, 0.1);
+}
+
+.green-theme {
+  --bg-color: #e6ffe6;
+  --text-color: #004d00;
+  --highlight-color: rgba(0, 153, 0, 0.1);
+}
+
+.black-theme {
+  --bg-color: #1a1a1a;
+  --text-color: #f2f2f2;
+  --highlight-color: rgba(255, 255, 255, 0.05);
+}
+
+.white-theme {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --highlight-color: #f9f9f9;
+}
+
+.not-found {
+  color: red;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Apply variables */
+.invoice-wrapper {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
 .logo-container{
 max-width: 770px;
 display: flex;
